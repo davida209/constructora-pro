@@ -59,23 +59,26 @@ vercel.json       Compilación y reescritura de rutas
 
 Cada carpeta es autosuficiente. No importa archivos de los otros proyectos. Puedes modificar datos y reglas en model.js, la interfaz en main.js y el diseño en style.css.
 
+## Repositorio y demo
+
+- [Ver demo](https://construction-frontend-ten.vercel.app/)
+- [Ver código](https://github.com/davida209/constructora-pro)
+- [Portafolio de Lester David](https://portfoliolester.vercel.app/)
+
 ## Git y despliegue
 
-Sube solamente esta carpeta a su propio repositorio. No subas node_modules, dist, .env ni .vercel. El archivo .gitignore ya los excluye.
-
 ```bash
-git init -b main
-git add .
-git commit -m "feat: add constructora-pro demo"
-git remote add origin URL_DE_TU_REPOSITORIO
-git push -u origin main
+git clone https://github.com/davida209/constructora-pro.git
+cd constructora-pro
+npm ci
+npm run dev
 ```
 
-Crea primero un repositorio vacío, sin README inicial, para evitar historiales distintos. Para trabajar en equipo, utiliza develop como rama de integración y ramas feature/* para cambios, con pull requests y comprobaciones antes de integrar en main.
+El repositorio está conectado a su proyecto de Vercel. Los cambios en `main` activan un despliegue automático. GitHub Actions valida las pruebas y la compilación en cambios de `main` y `develop`, y en pull requests.
 
-En Vercel: framework Vite, instalación npm ci, compilación npm run build, salida dist. No requiere variables de entorno.
+Configuración: framework Vite, instalación `npm ci`, compilación `npm run build`, salida `dist`. No requiere variables de entorno. No subas `node_modules`, `dist`, `.env` ni `.vercel`; `.gitignore` ya los excluye.
 
-Para conservar **https://construction-frontend-ten.vercel.app/**, conecta este repositorio al proyecto de Vercel que ya tiene ese dominio; no crees otro proyecto para reemplazarlo. Lee la guía de la carpeta principal.
+Antes de subir cambios, ejecuta `npm test` y `npm run build`. Usa ramas `feature/*` y pull requests para revisar cambios. Conserva el proyecto de Vercel existente para mantener su dirección pública.
 
 ## Recursos visuales
 
